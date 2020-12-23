@@ -35,4 +35,17 @@ const singleProm = () => new Promise(function (resolve, reject) {
     }, 3000)
 })
 
-singleProm().then(res => console.log(res)).catch(err => console.log(err))
+/* singleProm().then(res => console.log(res)).catch(err => console.log(err)) */
+
+const testProm = async () => {
+    try {
+        const resp = await singleProm()
+        console.log(resp)
+    } catch (error) {
+        console.log(error)
+    } finally {
+        console.log('here')
+    }
+}
+
+testProm()
