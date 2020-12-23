@@ -1,4 +1,4 @@
-const prom = new Promise(function (resolve, reject) {
+/* const prom = new Promise(function (resolve, reject) {
     setTimeout(() => {
         let isOk = true;
         if (isOk) {
@@ -23,7 +23,7 @@ const prom2 = new Promise(function (resolve, reject) {
 
 Promise.all([prom, prom2]).then(res => console.log(res)).catch(err => console.log(err))
 
-
+*/
 const singleProm = () => new Promise(function (resolve, reject) {
     setTimeout(() => {
         let isOk = true;
@@ -35,4 +35,4 @@ const singleProm = () => new Promise(function (resolve, reject) {
     }, 3000)
 })
 
-console.log(singleProm().then(res => console.log(res)).catch(err => console.log(err)))
+singleProm().then(res => console.log(res)).catch(err => console.log(err))
