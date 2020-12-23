@@ -22,3 +22,17 @@ const prom2 = new Promise(function (resolve, reject) {
 
 
 Promise.all([prom, prom2]).then(res => console.log(res)).catch(err => console.log(err))
+
+
+const singleProm = () => new Promise(function (resolve, reject) {
+    setTimeout(() => {
+        let isOk = true;
+        if (isOk) {
+            resolve('Ok')
+        } else {
+            reject('Wrong')
+        }
+    }, 3000)
+})
+
+console.log(singleProm().then(res => console.log(res)).catch(err => console.log(err)))
